@@ -1,13 +1,10 @@
 module.exports = class Validador{
 
   esNumero(cadena){
-
     for(let i = 0; i < cadena.length; i++){
       if(!( cadena[i] >= '0' && cadena[i] <='9')) return false;
     }
-
     return true;
-
   }
 
   pos_inicial_valido(_comando){
@@ -18,7 +15,6 @@ module.exports = class Validador{
     let aux = false;
 
     for(let i = 0 ; i < _comando.length; i++){
-      
       if(_comando[i] == "," && !aux){
         aux = true;
         continue;
@@ -29,8 +25,6 @@ module.exports = class Validador{
         else coordenadaY += _comando[i]; 
       }
     }
-
-    console.log(coordenadaX, coordenadaY);
 
     if(!aux) return false;
     if( !this.esNumero(coordenadaX) && !this.esNumero(coordenadaY) ) return false;
@@ -44,8 +38,24 @@ module.exports = class Validador{
     return true;
   }
 
+
   comandoValido(comando){
-    return this.pos_inicial_valido(comando);
+
+    let dimension = "";
+    let pos_ini = "";
+
+    let i = 0;
+
+    for(i; i < comando.lengthl; i++){
+      if(comando[i] == '/') break;
+      dimension+=comando[i];
+    }
+    i++;
+    for(i; i < comando.length; i++){
+      pos_ini+=comando[i];
+    }
+
+    return this.pos_inicial_valido(pos_ini);
   }
 
 };
