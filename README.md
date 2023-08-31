@@ -23,4 +23,4 @@ npm run test-once
 6. Validar el formato y validez del comando de movimiento y direccion, en conjunto con lo anterior(tamanio de grilla/posicion inicial/movimiento y direccion).
 7. Efectuar e interpretar el comando de direccion hacia la izquierda(I), ademas, mostrar la direccion resultante.
 8. Efectuar e interpretar el comando de direccion hacia la derecha(D), ademas, mostrar la direccion resultante.
-9. Efectura e interpretar el comando de avance(A), ademas, mostrar la posicion final.
+9. Efectuar e interpretar el comando de avance(A), ademas, mostrar la posicion final.
