@@ -5,17 +5,20 @@ module.exports = class Interpretador{
 
     let dimension = "";
     let pos_ini = "";
+    let instrucciones = "";
     
     const partes = comando.split('/');
 
     if(partes.length >= 2){
       dimension = partes[0];
       pos_ini = partes[1];
+      instrucciones = partes[2]
     }
 
     this.comando = comando;
     this.pos_ini =  pos_ini;
     this.dimension = dimension;
+    this.instrucciones = instrucciones;
 
     this.posInicialValido(pos_ini);    
     this.dimensionValido(dimension);
