@@ -17,6 +17,7 @@ module.exports = class Autito{
 
     for(let i = 0; i < instrucciones.length; i++){
       if( instrucciones[i] == 'I') indice--;
+      if( instrucciones[i] == 'D') indice++;
       indice = (indice +4)%4;
     }
 
