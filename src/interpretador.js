@@ -50,11 +50,11 @@ module.exports = class Interpretador{
     if(coordenadaX < 0 || coordenadaY < 0) valido = false;
     if(orientacion != 'N' && orientacion != 'O' && orientacion != 'S' && orientacion != 'E') valido = false;
 
-    this.pos_ini_valido = valido;
     this.coordenadaX = coordenadaX;
     this.coordenadaY = coordenadaY;
+    this.orientacion = orientacion;
 
-    return valido;
+    return this.pos_ini_valido = valido;
   }
 
   dimensionValido(_comando){
@@ -79,11 +79,10 @@ module.exports = class Interpretador{
     
     if(ancho <= 0 || alto <= 0) valido = false;
     
-    this.dimension_valido = valido;
     this.ancho = ancho;
     this.alto = alto;
 
-    return valido;
+    return this.dimension_valido = valido;
   }
 
   instruccionesValido(_comando){
@@ -96,9 +95,7 @@ module.exports = class Interpretador{
       }
     }
 
-    this.instrucciones_valido = valido;
-
-    return valido;  
+    return this.instrucciones_valido = valido;
   }
 
   esComandoValido(){

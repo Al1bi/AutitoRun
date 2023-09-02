@@ -1,6 +1,6 @@
 import Interpretador from "./interpretador";
 
-describe("Validadorr", () => {
+describe("Interpretador", () => {
   it("La coordenada \"0,0N\" es valida ", () => {
     const vl = new Interpretador();
     expect(vl.posInicialValido("0,0N")).toEqual(true);
@@ -65,6 +65,5 @@ describe("Validadorr", () => {
     const vl = new Interpretador("AAAAAAAAAAAAAA");
     expect(vl.esComandoValido()).toEqual(false);
   });
-  
 
 });

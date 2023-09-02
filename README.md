@@ -24,3 +24,4 @@ npm run test-once
 7. Efectuar e interpretar el comando de direccion hacia la izquierda(I), ademas, mostrar la direccion resultante.
 8. Efectuar e interpretar el comando de direccion hacia la derecha(D), ademas, mostrar la direccion resultante.
 9. Efectuar e interpretar el comando de avance(A), ademas, mostrar la posicion final.
+10. Validar que el auto avance dentro de los limites de la grilla.
