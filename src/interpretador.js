@@ -9,7 +9,7 @@ module.exports = class Interpretador{
     
     const partes = comando.split('/');
 
-    if(partes.length >= 2){
+    if(partes.length >= 3){
       dimension = partes[0];
       pos_ini = partes[1];
       instrucciones = partes[2]
@@ -22,11 +22,10 @@ module.exports = class Interpretador{
 
     this.posInicialValido(pos_ini);    
     this.dimensionValido(dimension);
+    this.instruccionesValido(instrucciones);
   }
 
   posInicialValido(_comando){
-
-    if(_comando == undefined) _comando = this.comando;
 
     let valido = true;
     let coordenadaX = "";
@@ -42,8 +41,6 @@ module.exports = class Interpretador{
       coordenadaY = partes[1].substring(0,partes[1].length -1);
       orientacion = partes[1][partes[1].length -1];
     }
-
-    console.log(coordenadaX, coordenadaY);
 
     if( isNaN(coordenadaX) || isNaN(coordenadaY) ) valido = false;
 
@@ -62,8 +59,6 @@ module.exports = class Interpretador{
 
   dimensionValido(_comando){
     
-    if(_comando == undefined) _comando = this.comando;
-
     let valido = true;    
     let ancho = "";
     let alto  = "";
@@ -91,8 +86,23 @@ module.exports = class Interpretador{
     return valido;
   }
 
+  instruccionesValido(_comando){
+    let valido  = true;
+      
+    for(let i = 0; i < _comando.length; i++){
+      if(_comando[i] != 'A' && _comando[i] != 'D' && _comando[i] != 'I' ){
+        valido = false;
+        break;
+      }
+    }
+
+    this.instrucciones_valido = valido;
+
+    return valido;  
+  }
+
   esComandoValido(){
-    return (this.dimension_valido && this.pos_ini_valido);
+    return (this.dimension_valido && this.pos_ini_valido && this.instrucciones_valido);
   }
 
 
