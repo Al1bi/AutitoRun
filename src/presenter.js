@@ -15,12 +15,12 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  const auto = new Autito(vl.orientacion, vl.instrucciones);
+  const auto = new Autito(vl.coordenadaX, vl.coordenadaY,vl.orientacion, vl.instrucciones);
 
   div.innerHTML = "<p> Poscion inicial: " + vl.pos_ini + "</p>";
 
-  div.innerHTML += " Comandos: <p>" + comando.value + "</p>";
+  div.innerHTML += " Comandos: <p>" + vl.instrucciones + "</p>";
 
-  div.innerHTML += "<p> Poscion Final: " +  auto.actualOrientacion + "</p>";
+  div.innerHTML += "<p> Poscion Final: " +  auto.posicionFinal + "</p>";
 
 });
