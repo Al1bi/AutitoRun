@@ -102,5 +102,9 @@ module.exports = class Interpretador{
     return (this.dimension_valido && this.pos_ini_valido && this.instrucciones_valido);
   }
 
+  esCoherente(){
+    return this.coordenadaX <= this.ancho && this.coordenadaY <= this.alto;
+  }
+
 
 };

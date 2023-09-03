@@ -1,8 +1,10 @@
 module.exports = class Autito{
 
-  constructor(posIniX, posIniY, orientacion, instrucciones){
+  constructor(ancho, alto, posIniX, posIniY, orientacion, instrucciones){
     this.posActX = posIniX;
     this.posActY = posIniY;
+    this.ancho = ancho;
+    this.alto = alto;
     this.actualOrientacion = orientacion;
     this.posicionFinal = this.ejecutarInstrucciones(instrucciones);
   }
@@ -22,7 +24,8 @@ module.exports = class Autito{
     for(let i = 0; i < instrucciones.length; i++){
       if( instrucciones[i] == 'I') indice--;
       if( instrucciones[i] == 'D') indice++;
-      if( instrucciones[i] == 'A'){
+      if( instrucciones[i] == 'A' && this.posActX+dx[indice] >= 0 && this.posActX+dx[indice] <= this.ancho
+        && this.posActY+dy[indice] >= 0 && this.posActY+dy[indice] <= this.alto){
         this.posActX+=dx[indice];
         this.posActY+=dy[indice];
       }

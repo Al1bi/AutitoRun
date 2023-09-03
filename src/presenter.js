@@ -11,11 +11,16 @@ form.addEventListener("submit", (event) => {
   const vl = new Interpretador(comando.value);
 
   if(!vl.esComandoValido()){
-    alert("El comando ingresado es invalido, por favor vuelva a ingresar otro.");
+    alert("El comando ingresado es invalido, por favor vuelva a ingresar otro comando.");
     return;
   }
 
-  const auto = new Autito(vl.coordenadaX, vl.coordenadaY,vl.orientacion, vl.instrucciones);
+  if(!vl.esCoherente()){
+    alert("La posicion inicial ingresada debe encontrarse dentro de los limites de la grilla, por favor vuelva a ingresar otro comando");
+    return;
+  }
+
+  const auto = new Autito(vl.ancho, vl.alto, vl.coordenadaX, vl.coordenadaY,vl.orientacion, vl.instrucciones);
 
   div.innerHTML = "<p> Poscion inicial: " + vl.pos_ini + "</p>";
 
