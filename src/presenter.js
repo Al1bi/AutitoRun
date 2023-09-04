@@ -22,10 +22,10 @@ form.addEventListener("submit", (event) => {
 
   const auto = new Autito(vl.ancho, vl.alto, vl.coordenadaX, vl.coordenadaY,vl.orientacion, vl.instrucciones);
 
-  div.innerHTML = "<p> Poscion inicial: " + vl.pos_ini + "</p>";
+  div.innerHTML = "<p> Posicion inicial: " + vl.pos_ini + "</p>";
 
   div.innerHTML += " Comandos: <p>" + vl.instrucciones + "</p>";
 
-  div.innerHTML += "<p> Poscion Final: " +  auto.posicionFinal + "</p>";
+  div.innerHTML += "<p> Posicion Final: " +  auto.posicionFinal + "</p>";
 
 });
